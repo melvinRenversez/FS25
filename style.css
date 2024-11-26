@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    background:  #343434;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 850px;
+    margin: 30px 0px;
+    border-radius: 20px;
+}
+
+.container .header{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.container .header h1{
+    color: #dddddd;
+}
+
+.container .header .field{
+    display: flex;
+    align-items: center;
+}
+
+.container .header .field input{
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    margin-right: 20px;
+    outline: none;
+    padding: 10px 20px ;
+}
+.container .header .field button{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border:none;
+    cursor: pointer;
+}
+
+
+.container .content{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+}
+.container .content a.item{
+    background: #00000050;
+    color: #dddddd;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .content .item h1{
+    padding: 0px 40px;
+}
+
+.container .content .item img{
+    background: red;
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+}
