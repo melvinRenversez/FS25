@@ -5,13 +5,14 @@ function start(data) {
     content.innerHTML = ''; // Réinitialiser le contenu
     data.forEach(item => {
         const x = `
-            <div href="${item.lien}" class="item">
+            <div class="item" id="item">
                 <p class="id">${item.id} </p>
                 <p class="nom">${item.name}</p>
             </div>
         `;
         content.innerHTML += x;
     });
+    getButtons()
 }
 
 // Fonction pour afficher uniquement les éléments correspondant à la recherche
@@ -22,7 +23,7 @@ function search(data, searchTerm) {
     content.innerHTML = ''; // Réinitialiser le contenu
     filteredData.forEach(item => {
         const x = `
-            <div href="${item.lien}" class="item"> 
+            <div class="item" id="item"> 
                 <p>${item.id}</p>
                 <p>${item.name}</p> 
             </div>
