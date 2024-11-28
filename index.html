@@ -5,17 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <script src="app.js" defer></script>
+    <script src="search-bar.js" defer></script>
+    <script src="inf.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Farming Simulator 25</h1>
-            <div class="field">
-                <input type="search" id="search-bar" placeholder="Search">
+    <div class="search">
+        <input type="search" id="search-bar" placeholder="Search">
+        <div class="items" id="items"></div>
+    </div>
+    <div class="content">
+        <header>
+            <h1>
+                Farming Simulator 25
+            </h1>
+        </header>
+        <div class="inf">
+            <div class="top">
+                <p class="idName" id="idName">IDNAME</p>
+                <p class="mouth" id="mounth">mois</p>
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <img src="courbe/test.png">
+                </div>
+                <div class="right">
+                    <div class="preset">
+                        <button>best Price</button>
+                    </div>
+                    <div class="form">
+                        <div class="field">
+                            <label for="">Prix / Tonnes</label>
+                            <input type="number">
+                        </div>
+                        <div class="field">
+                            <label for="">Tonnes</label>
+                            <input type="number">
+                        </div>
+                        <div class="result">
+                            <label for="">Total</label>
+                            <input type="number">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="content" id="content"></div>
     </div>
 </body>
 </html>

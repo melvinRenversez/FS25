@@ -1,17 +1,14 @@
-const content = document.getElementById('content');
+const content = document.getElementById('items');
 
 // Fonction pour afficher tous les éléments au chargement
 function start(data) {
     content.innerHTML = ''; // Réinitialiser le contenu
     data.forEach(item => {
         const x = `
-            <a href="${item.lien}" class="item">
-                <div class="info">
-                    <p class="id">${item.id} - </p>
-                    <p class="nom">${item.nom}</p>
-                </div>
-                <img src="${item.image}" alt="${item.nom}">
-            </a>
+            <div href="${item.lien}" class="item">
+                <p class="id">${item.id} </p>
+                <p class="nom">${item.name}</p>
+            </div>
         `;
         content.innerHTML += x;
     });
@@ -25,13 +22,10 @@ function search(data, searchTerm) {
     content.innerHTML = ''; // Réinitialiser le contenu
     filteredData.forEach(item => {
         const x = `
-            <a href="${item.lien}" class="item">
-                <div class="info">
-                    <h1>${item.id}</h1>
-                    <h1>${item.nom}</h1>
-                </div>
-                <img src="${item.image}" alt="${item.nom}">
-            </a>
+            <div href="${item.lien}" class="item"> 
+                <p>${item.id}</p>
+                <p>${item.name}</p> 
+            </div>
         `;
         content.innerHTML += x;
     });
