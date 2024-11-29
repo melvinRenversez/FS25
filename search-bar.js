@@ -12,24 +12,27 @@ function start(data) {
         `;
         content.innerHTML += x;
     });
-    getButtons()
+    startInf()
 }
 
 // Fonction pour afficher uniquement les éléments correspondant à la recherche
 function search(data, searchTerm) {
     const filteredData = data.filter(item => 
-        item.nom.toLowerCase().startsWith(searchTerm.toLowerCase())
+        item.name && item.name.toLowerCase().startsWith(searchTerm.toLowerCase())
     );
-    content.innerHTML = ''; // Réinitialiser le contenu
+
+    let contentHTML = ''; // Variable pour stocker le contenu HTML
     filteredData.forEach(item => {
         const x = `
-            <div class="item" id="item"> 
+            <div class="item" id="item-${item.id}"> 
                 <p>${item.id}</p>
                 <p>${item.name}</p> 
             </div>
         `;
-        content.innerHTML += x;
+        contentHTML += x; // Ajouter chaque item à contentHTML
     });
+
+    content.innerHTML = contentHTML; // Appliquer tout le contenu en une fois
 }
 
 // Récupérer les données JSON

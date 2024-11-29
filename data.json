@@ -2,49 +2,49 @@
     {
         "id": 1,
         "name": "Soja",
-        "image": "img/Sojapng",
+        "image": "img/Soja.jpg",
         "price": 2112,
         "month": "juin",
-        "courbe": "courbe/Sojapng"
+        "courbe": "courbe/Soja.jpg"
     },
     {
         "id": 2,
         "name": "Lait de chevre",
-        "image": "img/Lait de chevrepng",
+        "image": "img/Lait de chevre.jpg",
         "price": 5470,
         "month": "septembre",
-        "courbe": "courbe/Lait de chevrepng"
+        "courbe": "courbe/Lait de chevre.jpg"
     },
     {
         "id": 3,
         "name": "Pleurote",
-        "image": "img/Pleurotepng",
+        "image": "img/Pleurote.jpg",
         "price": 1722,
         "month": "janvier",
-        "courbe": "courbe/Pleurotepng"
+        "courbe": "courbe/Pleurote.jpg"
     },
     {
         "id": 4,
         "name": "Boite de riz",
-        "image": "img/Boite de rizpng",
+        "image": "img/Boite de riz.jpg",
         "price": 4968,
         "month": "avril",
-        "courbe": "courbe/Boite de rizpng"
+        "courbe": "courbe/Boite de riz.jpg"
     },
     {
         "id": 5,
         "name": "Colza",
-        "image": "img/Colzapng",
+        "image": "img/Colza.jpg",
         "price": 1272,
         "month": "novembre",
-        "courbe": "courbe/Colzapng"
+        "courbe": "courbe/Colza.jpg"
     },
     {
         "id": 6,
         "name": "Coton",
-        "image": "img/Cotonpng",
+        "image": "img/Coton.jpg",
         "price": 2476,
         "month": "fevrier",
-        "courbe": "courbe/Cotonpng"
+        "courbe": "courbe/Coton.jpg"
     }
 ]

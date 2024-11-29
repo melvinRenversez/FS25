@@ -3,6 +3,7 @@ var curentId = 0;
 const infId = document.getElementById("id")
 const infName = document.getElementById("name")
 const infMounth = document.getElementById("mounth")
+const infImage = document.getElementById("image")
 const infPriceInput = document.getElementById("priceInput")
 const infTonneInput = document.getElementById("tonneInput")
 const infTotal = document.getElementById("total")
@@ -10,7 +11,7 @@ const infTotal = document.getElementById("total")
 const inputs = document.querySelectorAll('input')
 
 inputs.forEach(input => {
-    input.addEventListener('change', () => {
+    input.addEventListener('keydown', () => {
         calculate()
     })
 })
@@ -36,6 +37,7 @@ var datas = []
 var id;
 var name;
 var mounth;
+var image;
 var bestPrice;
 
 function changeId(newId){
@@ -46,10 +48,12 @@ function changeId(newId){
             id = item.id;
             name = item.name;
             mounth = item.month;
+            image = item.courbe;
             bestPrice = item.price;
         }
     })
     updateInf()
+    calculate()
 }
 
 function updateInf(){
@@ -59,16 +63,26 @@ function updateInf(){
     console.log(bestPrice);
     infId.innerHTML = id;
     infName.innerHTML = name;
-    infMounth.innerHTML = mounth;   
+    infMounth.innerHTML = mounth;  
+    infImage.src = image;
     infPriceInput.value = bestPrice;
 }
 
-function calculate(){
-    const price = parseFloat(infPriceInput.value);
-    const tonne = parseFloat(infTonneInput.value);
-    const total = price * tonne / 1000;
-    infTotal.innerHTML = total;
+function calculate() {
+    const price = parseFloat(infPriceInput.value) || 0;
+    let tonne = parseFloat(infTonneInput.value);
+
+    if (isNaN(tonne)) {
+        tonne = 0;
+    }
+
+    const total = (price * tonne) / 1000;
+
+    if (!isNaN(total)) {
+        infTotal.value = total.toFixed(2);
+    }
 }
+
 
 
 fetch("data.json")
@@ -85,4 +99,11 @@ fetch("data.json")
             console.error('Error:', err);
         });
 
-changeId(2)
+function startInf(){
+    console.log("Starting info");
+    getButtons();
+    calculate();
+    infId.innerHTML = "FS"
+    infName.innerHTML = "Welcome"
+    infMounth.innerHTML = "25"
+}

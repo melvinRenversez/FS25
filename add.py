@@ -49,7 +49,7 @@ def add_item():
         "image": "img/"+ name + "png",
         "price": int(price),  # Conversion en entier
         "month": month,
-        "courbe": "courbe/"+ name + "png"
+        "courbe": "courbe/"+ name + ".jpg"
     }
 
     # Ajout aux données existantes
