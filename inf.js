@@ -11,7 +11,7 @@ const infTotal = document.getElementById("total")
 const inputs = document.querySelectorAll('input')
 
 inputs.forEach(input => {
-    input.addEventListener('keydown', () => {
+    input.addEventListener('input', () => {
         calculate()
     })
 })
@@ -70,13 +70,9 @@ function updateInf(){
 
 function calculate() {
     const price = parseFloat(infPriceInput.value) || 0;
-    let tonne = parseFloat(infTonneInput.value);
+    let tonne = parseFloat(infTonneInput.value) || 0;
 
-    if (isNaN(tonne)) {
-        tonne = 0;
-    }
-
-    const total = (price * tonne) / 1000;
+    const total = price * (tonne / 1000);
 
     if (!isNaN(total)) {
         infTotal.value = total.toFixed(2);
