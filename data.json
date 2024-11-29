@@ -30,5 +30,21 @@
         "price": 4968,
         "month": "avril",
         "courbe": "courbe/Boite de rizpng"
+    },
+    {
+        "id": 5,
+        "name": "Colza",
+        "image": "img/Colzapng",
+        "price": 1272,
+        "month": "novembre",
+        "courbe": "courbe/Colzapng"
+    },
+    {
+        "id": 6,
+        "name": "Coton",
+        "image": "img/Cotonpng",
+        "price": 2476,
+        "month": "fevrier",
+        "courbe": "courbe/Cotonpng"
     }
 ]

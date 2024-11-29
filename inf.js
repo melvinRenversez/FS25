@@ -1,6 +1,7 @@
 var curentId = 0;
 
-const infIdName = document.getElementById("idName")
+const infId = document.getElementById("id")
+const infName = document.getElementById("name")
 const infMounth = document.getElementById("mounth")
 const infPriceInput = document.getElementById("priceInput")
 const infTonneInput = document.getElementById("tonneInput")
@@ -56,7 +57,8 @@ function updateInf(){
     console.log(name);
     console.log(mounth);
     console.log(bestPrice);
-    infIdName.innerHTML = id;
+    infId.innerHTML = id;
+    infName.innerHTML = name;
     infMounth.innerHTML = mounth;   
     infPriceInput.value = bestPrice;
 }
@@ -82,3 +84,5 @@ fetch("data.json")
         .catch(err => {
             console.error('Error:', err);
         });
+
+changeId(2)
