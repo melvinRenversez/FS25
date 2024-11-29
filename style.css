@@ -10,6 +10,19 @@ body {
     background: #343434;
 }
 
+.updateInfo{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.updateInfo p{
+    font-size: 1em;
+    color: #dddddd;
+    letter-spacing: 1.6px;
+}
+
 .search{
     display: flex;
     flex-direction: column;
