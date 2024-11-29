@@ -46,7 +46,7 @@ def add_item():
     new_item = {
         "id": data[-1]['id'] + 1 if data else 1,  # Gestion des IDs
         "name": name,
-        "image": "img/"+ name + "png",
+        "image": "img/"+ name + ".jpg",
         "price": int(price),  # Conversion en entier
         "month": month,
         "courbe": "courbe/"+ name + ".jpg"

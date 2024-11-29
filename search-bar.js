@@ -1,12 +1,35 @@
 const content = document.getElementById('items');
 
-// Fonction pour afficher tous les éléments au chargement
+
+function getAbreviations(month) {
+    const months = {
+        janvier: "jan",
+        fevrier: "fév",
+        mars: "mar",
+        avril: "avr",
+        mai: "mai",
+        juin: "jun",
+        juillet: "jul",
+        aout: "aou",
+        septembre: "sep",
+        octobre: "oct",
+        novembre: "nov",
+        décembre: "dec"
+    };
+
+    const lowerCaseMonth = month.toLowerCase();
+
+    return months[lowerCaseMonth] || "Mois inconnu";
+}
+
+
 function start(data) {
-    content.innerHTML = ''; // Réinitialiser le contenu
+    content.innerHTML = '';
     data.forEach(item => {
+        let month = getAbreviations(item.month);
         const x = `
-            <div class="item" id="item">
-                <p class="id">${item.id} </p>
+            <div class="item ${item.id}" id="item">
+                <p class="id">${month} </p>
                 <p class="nom">${item.name}</p>
             </div>
         `;
@@ -15,27 +38,66 @@ function start(data) {
     startInf()
 }
 
-// Fonction pour afficher uniquement les éléments correspondant à la recherche
+function searchByMonth(data, month){
+    if (month == "vide"){
+        content.innerHTML = '';
+        data.forEach(item => {
+            let month = getAbreviations(item.month);
+            const x = `
+                <div class="item ${item.id}" id="item">
+                    <p class="id">${month} </p>
+                    <p class="nom">${item.name}</p>
+                </div>
+            `;
+            content.innerHTML += x;
+        });
+        getButtons()
+
+    }else{
+        const filteredData = data.filter(item => 
+            item.month && item.month.toLowerCase().startsWith(month.toLowerCase())
+        );
+    
+        let contentHTML = '';
+        filteredData.forEach(item => {
+            let month = getAbreviations(item.month);
+            const x = `
+                <div class="item ${item.id}" id="item"> 
+                    <p class="id">${month} </p>
+                    <p>${item.name}</p> 
+                </div>
+            `;
+            contentHTML += x;
+        });
+    
+        content.innerHTML = contentHTML;
+        getButtons()
+    }
+}
+
+
 function search(data, searchTerm) {
     const filteredData = data.filter(item => 
         item.name && item.name.toLowerCase().startsWith(searchTerm.toLowerCase())
     );
 
-    let contentHTML = ''; // Variable pour stocker le contenu HTML
+    let contentHTML = '';
     filteredData.forEach(item => {
+        let month = getAbreviations(item.month);
         const x = `
-            <div class="item" id="item-${item.id}"> 
-                <p>${item.id}</p>
+            <div class="item ${item.id}" id="item"> 
+                <p class="id">${month} </p>
                 <p>${item.name}</p> 
             </div>
         `;
-        contentHTML += x; // Ajouter chaque item à contentHTML
+        contentHTML += x;
     });
 
-    content.innerHTML = contentHTML; // Appliquer tout le contenu en une fois
+    content.innerHTML = contentHTML;
+    getButtons()
 }
 
-// Récupérer les données JSON
+
 fetch("data.json")
     .then(response => {
         if (!response.ok) {
@@ -44,18 +106,28 @@ fetch("data.json")
         return response.json();
     })
     .then(data => {
-        start(data); // Charger tous les éléments au début
+        start(data);
 
-        // Ajouter un écouteur à la barre de recherche
+        
         const searchBar = document.getElementById('search-bar');
         searchBar.addEventListener('input', (event) => {
             const searchTerm = event.target.value;
             if (searchTerm) {
-                search(data, searchTerm); // Afficher les résultats filtrés
+                search(data, searchTerm);
             } else {
-                start(data); // Réafficher tous les éléments si la barre est vide
+                start(data);
             }
         });
+
+
+        const monthSelector = document.getElementById('monthSelector');
+        monthSelector.addEventListener('change', (e)=>{
+            value = e.target.value;
+            console.log(value);
+            searchByMonth(data, value);
+        })
+
+
     })
     .catch(err => {
         console.error('Error:', err);

@@ -25,7 +25,8 @@ function getButtons(){
     
     buttons.forEach(button =>{
         button.addEventListener('click', () => {
-            let itemId = button.children[0].textContent;
+            let itemId = button.classList[1]
+            console.log("IDDDDDD : " + itemId)
             changeId(itemId);
         })
     })
