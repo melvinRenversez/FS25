@@ -20,7 +20,6 @@ def display_data():
         for item in data:
            print(   f"ID: {item['id']}\n"
                     f"Nom: {item['name']}\n"
-                    f"Lien: {item['lien']}\n"
                     f"Image: {item['image']}\n"
                     f"Prix: {item['price']} centimes\n"
                     f"Mois: {item['month']}\n"
