@@ -28,11 +28,10 @@ def add_item():
     
     # Saisie des informations par l'utilisateur
     name = input("Entrez le nom : ")
-    image = input("Entrez le chemin de l'image : ")
     price = input("Entrez le prix (en centimes, ex: 2750 pour 27,50€) : ")
     month = input("Entrez le mois : ")
-    courbe = input("Entrez le chemin de la courbe : ")
-
+    
+    
     # Vérification des doublons
     if any(item['name'].lower() == name.lower() for item in data):
         print("Un élément avec ce nom existe déjà.")
@@ -42,10 +41,10 @@ def add_item():
     new_item = {
         "id": data[-1]['id'] + 1 if data else 1,  # Gestion des IDs
         "name": name,
-        "image": "img/"+ image,
+        "image": "img/"+ name + "png",
         "price": int(price),  # Conversion en entier
         "month": month,
-        "courbe": "courbe/"+courbe
+        "courbe": "courbe/"+ name + "png"
     }
 
     # Ajout aux données existantes
