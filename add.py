@@ -18,8 +18,14 @@ def display_data():
     if data:
         print("\nListe des éléments existants :")
         for item in data:
-            print(f"ID: {item['id']}, Nom: {item['name']}, Lien: {item['lien']}, Image: {item['image']}, "
-                  f"Prix: {item['price']}, Mois: {item['month']}, Courbe: {item['courbe']}")
+           print(   f"ID: {item['id']}\n"
+                    f"Nom: {item['name']}\n"
+                    f"Lien: {item['lien']}\n"
+                    f"Image: {item['image']}\n"
+                    f"Prix: {item['price']} centimes\n"
+                    f"Mois: {item['month']}\n"
+                    f"Courbe: {item['courbe']}\n")
+
     else:
         print("\nAucun élément trouvé.")
 
