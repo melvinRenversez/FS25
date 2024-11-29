@@ -1,2 +1,34 @@
 [
+    {
+        "id": 1,
+        "name": "Soja",
+        "image": "img/Sojapng",
+        "price": 2112,
+        "month": "juin",
+        "courbe": "courbe/Sojapng"
+    },
+    {
+        "id": 2,
+        "name": "Lait de chevre",
+        "image": "img/Lait de chevrepng",
+        "price": 5470,
+        "month": "septembre",
+        "courbe": "courbe/Lait de chevrepng"
+    },
+    {
+        "id": 3,
+        "name": "Pleurote",
+        "image": "img/Pleurotepng",
+        "price": 1722,
+        "month": "janvier",
+        "courbe": "courbe/Pleurotepng"
+    },
+    {
+        "id": 4,
+        "name": "Boite de riz",
+        "image": "img/Boite de rizpng",
+        "price": 4968,
+        "month": "avril",
+        "courbe": "courbe/Boite de rizpng"
+    }
 ]
