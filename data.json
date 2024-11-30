@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Soja",
         "image": "img/Soja.jpg",
-        "price": 2112,
+        "price": 3555,
         "month": "juin",
         "courbe": "courbe/Soja.jpg"
     },
@@ -11,7 +11,7 @@
         "id": 2,
         "name": "Lait de chevre",
         "image": "img/Lait de chevre.jpg",
-        "price": 5470,
+        "price": 9129,
         "month": "septembre",
         "courbe": "courbe/Lait de chevre.jpg"
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "name": "Pleurote",
         "image": "img/Pleurote.jpg",
-        "price": 1722,
+        "price": 2900,
         "month": "janvier",
         "courbe": "courbe/Pleurote.jpg"
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "name": "Boite de riz",
         "image": "img/Boite de riz.jpg",
-        "price": 4968,
+        "price": 8322,
         "month": "avril",
         "courbe": "courbe/Boite de riz.jpg"
     },
@@ -35,7 +35,7 @@
         "id": 5,
         "name": "Colza",
         "image": "img/Colza.jpg",
-        "price": 1272,
+        "price": 2109,
         "month": "novembre",
         "courbe": "courbe/Colza.jpg"
     },
@@ -43,7 +43,7 @@
         "id": 6,
         "name": "Coton",
         "image": "img/Coton.jpg",
-        "price": 2476,
+        "price": 4196,
         "month": "fevrier",
         "courbe": "courbe/Coton.jpg"
     }
